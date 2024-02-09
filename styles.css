@@ -1,0 +1,90 @@
+
+@font-face {
+    font-family: pixelFont;
+    src: url(fonts/rainyhearts.ttf);
+}
+
+body {
+    background-color: rgb(254, 247, 249);
+    display: flex;
+    justify-content: center;
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, rgb(197 239 255) 3px, transparent 1px),
+      linear-gradient(to bottom, rgb(197 239 255) 3px, transparent 1px);
+}
+
+* {
+    font-family: pixelFont;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(72, 44, 53);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    width: 700px;
+    height: 550px;
+    background-color: rgb(255, 200, 216);
+    padding: 40px;
+    border-style: ridge;
+    border-width: 10px;
+    border-style: none outset outset none;
+    border-color: rgb(249, 215, 225);
+    border-radius: 20px;
+    box-shadow: 0px 0px 0px 5px rgb(72, 44, 53);
+
+
+    .menu-bar {
+        background-color: rgb(246, 194, 210);
+        padding: 5px;
+        border: rbg(1,1,1) solid 2px;
+        gap: 20px;
+        display: flex;
+
+        img {
+            border-radius: 20px;
+            border: inset 8px rgb(249, 215, 225);
+            box-shadow: 0px 0px 0px 4px rgb(72, 44, 53);
+
+        }
+    }
+
+    .screen {
+        background-color: rgb(197 239 255);
+        flex: 1;
+        padding: 10px;
+        border: inset 10px rgb(249, 215, 225);
+        border-radius: 20px;
+        box-shadow: 0px 0px 0px 4px rgb(72, 44, 53);
+
+    }
+
+    .action-panel {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+button {
+    border-radius: 50px;
+    border: none;
+    padding: 10px 10px;
+    background-color: rgb(255, 200, 216);
+    border: outset 8px rgb(249, 215, 225);
+    flex: 1;
+    box-shadow: 0px 0px 0px 4px rgb(72, 44, 53);
+}
+
+button:hover {
+    background-color: rgb(228, 178, 192);
+}
+
+button:active{
+    border: inset 8px rgb(249, 215, 225);
+}
+
