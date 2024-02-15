@@ -5,6 +5,8 @@ const buttonPanel = {
     right: document.querySelector("#right-button")
 };
 
+const screen = document.querySelector("#main-screen");
+
 // SET card_thumbnails = array of images
 // SET card_contents = array of images
 // SET current card = 0
@@ -30,16 +32,12 @@ const buttonPanel = {
  buttonPanel.action.addEventListener("click", () => {
     switch (currentPhase) {
         case phase.START:
-            alert("In start phase. Going to mailbox");
-            currentPhase = phase.MAILBOX;
+        case phase.LETTER:
+            goToMailbox();
             break;
         case phase.MAILBOX:
-            alert("Viewing mailbox. Launching current card")
-            currentPhase = phase.LETTER;
+            goToCard();
             break;
-        case phase.LETTER:
-            alert("Viewing letter. Going back to mailbox")
-            currentPhase = phase.MAILBOX;
     }
  //      IF state = start:
  //          CALL go to mailbox
@@ -49,11 +47,30 @@ const buttonPanel = {
  //          CALL go to mailbox
 });
 
+
  // FUNCTION go to mailbox:
+ function goToMailbox() {
  //      SET game state = mailbox
+    currentPhase = phase.MAILBOX;
  //      SET action button text = "Open"
+    buttonPanel.action.textContent = "Open Card";
  //      SET image = current card image
+    screen.textContent = "Mailbox";
  //      CALL set buttons
+ }
+
+  // FUNCTION launch current card:
+function goToCard() {
+ //      SET state = letter
+    currentPhase = phase.LETTER;
+ //      SET action button text = back
+    buttonPanel.action.textContent = "Back";
+ //      SET image = current card image 
+    screen.textContent = "Card";
+ //      SET right button disabled
+ //      SET left button disabled
+}
+
  // 
  // FUNCTION set buttons
  //      IF current card = 0:
@@ -78,12 +95,7 @@ const buttonPanel = {
  //          SET image = card image
  //          CALL set buttons
  //      
- // FUNCTION launch current card:
- //      SET state = letter
- //      SET right button disabled
- //      SET left button disabled
- //      SET action button text = back
- //      SET image = current card image 
+
  // 
  // 
  // 
