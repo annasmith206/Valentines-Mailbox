@@ -12,8 +12,9 @@ const screen = document.querySelector("#main-screen");
 // SET current card = 0
  const cards = {
     current: 0,
-    names: ["pokemon", "monster hunter", "chipi", "genshin", "ghibli", "bananagrams"]
- };
+    names: ["pokemon", "monster hunter", "chipi", "genshin", "ghibli", "bananagrams"],
+    getCurrentName: function() { return this.names[this.current]; }
+};
 
 // SET arrow buttons = disabled
  buttonPanel.left.disabled = true;
@@ -55,7 +56,7 @@ const screen = document.querySelector("#main-screen");
  //      SET action button text = "Open"
     buttonPanel.action.textContent = "Open Card";
  //      SET image = current card image
-    screen.textContent = "Mailbox";
+    screen.textContent = cards.getCurrentName();
  //      CALL set buttons
  }
 
@@ -66,7 +67,7 @@ function goToCard() {
  //      SET action button text = back
     buttonPanel.action.textContent = "Back";
  //      SET image = current card image 
-    screen.textContent = "Card";
+    screen.textContent = "viewing contents of " + cards.getCurrentName();
  //      SET right button disabled
  //      SET left button disabled
 }
