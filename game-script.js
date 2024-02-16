@@ -5,14 +5,22 @@ const buttonPanel = {
 };
 
 const displayImage = document.querySelector(".display-image");
-
-const screen = document.querySelector("#main-screen");
-
- const cards = {
+const mainScreen = document.querySelector(".main-screen");
+const messageScreen = document.querySelector(".message-screen")
+ 
+const cards = {
     current: 0,
     thumbnails: ["./images/pokeball.png", "./images/questBoard.png"],
     images: ["./images/torchic.png", "./images/quest.png"],
     names: ["pokemon", "monster hunter"],
+    thumbnailMessages: [
+        "It's a pokeball! I wonder what pokemon is inside?", 
+        "Is that a quest? I hope it's not urgent."
+    ],
+    contentMessages: [
+        "It's a torchic! Looks like he has a message for you.",
+        "WOW! This looks really important."
+    ],
     getCurrentThumbnail: function() {
         return this.thumbnails[this.current];
     },
@@ -21,6 +29,12 @@ const screen = document.querySelector("#main-screen");
     },
     getCurrentName: function() { 
         return this.names[this.current]; 
+    },
+    getCurrentThumbnailMessage: function() {
+        return this.thumbnailMessages[this.current];
+    },
+    getCurrentContentMessage: function() {
+        return this.contentMessages[this.current];
     },
     canScrollRight: function() { 
         return this.current < (this.names.length - 1);
@@ -58,54 +72,43 @@ buttonPanel.action.addEventListener("click", () => {
 
 buttonPanel.right.addEventListener("click", () => { 
     if (cards.canScrollRight()) {
-        cards.scroll(direction.RIGHT);
-        displayImage.src = cards.getCurrentThumbnail();
-        setButtons();
+        scrollThumnails(direction.RIGHT);
     }
 });
 
 buttonPanel.left.addEventListener("click", () => { 
     if (cards.canScrollLeft()) {
-        cards.scroll(direction.LEFT);
-        displayImage.src = cards.getCurrentThumbnail();
-        setButtons();
+        scrollThumnails(direction.LEFT);
     }
 });
+
+function scrollThumnails(direction) {
+    cards.scroll(direction);
+    updateMailBox();
+}
 
  function goToMailbox() {
     currentPhase = phase.MAILBOX;
     buttonPanel.action.textContent = "Open";
-    displayImage.src = cards.getCurrentThumbnail();
-    setButtons();
+    mainScreen.style['align-items'] = "center";
+    updateMailBox();
  }
 
 function goToCard() {
     currentPhase = phase.LETTER;
     buttonPanel.action.textContent = "Back";
+    messageScreen.textContent = cards.getCurrentContentMessage();
     displayImage.src = cards.getCurrentImage();
-    buttonPanel.left.disabled = true;
-    buttonPanel.right.disabled = true;
+    setButtons();
+}
+
+function updateMailBox() {
+    displayImage.src = cards.getCurrentThumbnail();
+    messageScreen.textContent = cards.getCurrentThumbnailMessage();
+    setButtons();
 }
 
  function setButtons() {
-    buttonPanel.left.disabled = !cards.canScrollLeft();
-    buttonPanel.right.disabled = !cards.canScrollRight();
+    buttonPanel.left.disabled = (currentPhase === phase.LETTER) || !cards.canScrollLeft();
+    buttonPanel.right.disabled = (currentPhase === phase.LETTER) || !cards.canScrollRight();
  }
- // FUNCTION set buttons
- //      IF current card = 0:
- //          SET left button = disabled
- //      ELSE:
- //          SET left button = enabled
- // 
- //      IF current card = length - 1:
- //          SET right button = disabled
- //      ELSE:
- //          SET right button = enabled
- // 
- 
- //      
-
- // 
- // 
- // 
- ///

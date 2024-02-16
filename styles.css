@@ -51,13 +51,13 @@ body {
             flex: none;
         }
 
-        .screen {
+        .message-screen {
             flex: 1;
             padding: 10px;
         }
     }
 
-    #main-screen {
+    .main-screen {
         flex: 1;
         display: flex;
         align-items: flex-end;
@@ -78,7 +78,8 @@ body {
     }
 }
 
-.screen,
+.main-screen,
+.message-screen,
 .profile-image {
     background-color: rgb(255 247 255);
     border-radius: 25px;
