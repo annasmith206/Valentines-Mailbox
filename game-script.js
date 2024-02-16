@@ -91,6 +91,7 @@ function scrollThumnails(direction) {
     currentPhase = phase.MAILBOX;
     buttonPanel.action.textContent = "Open";
     mainScreen.style['align-items'] = "center";
+    displayImage.classList.add("bounce");
     updateMailBox();
  }
 

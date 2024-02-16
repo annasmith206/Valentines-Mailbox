@@ -106,3 +106,25 @@ button:disabled{
     color: #ffd8e5;
     background-color: rgb(255 182 203);
 }
+
+.bounce {
+    margin-top: 10px;
+    animation: bounce .5s infinite alternate;
+    -webkit-animation: bounce .5s infinite alternate;
+  }
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  @-webkit-keyframes image {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
