@@ -42,7 +42,6 @@ body {
     height: 620px;
     padding: 35px 35px 22px 35px;
 
-
     .menu-bar {
         padding: 5px;
         gap: 20px;
@@ -51,11 +50,45 @@ body {
         img {
             flex: none;
         }
+
+        .screen {
+            flex: 1;
+            padding: 10px;
+        }
     }
 
-    .screen {
+    #main-screen {
         flex: 1;
-        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        .screen-header {
+            align-self:flex-start;
+            display: flex;
+            gap: 15px;
+            border-radius: 20px 0px 20px 0px;
+            box-shadow: 3px 3px 0px 3px #b674008f;
+            padding: 10px;
+            background-color: rgb(229, 208, 168); 
+            
+            img {
+                height: 50px;
+                width: auto;
+            }
+        }
+
+        .image-container {
+            align-self: center;
+            flex: none;
+            height: 300px;
+
+            .display-image {
+                height: 100%;
+                width: auto;
+            }
+        }
+
     }
 
     .action-panel {
@@ -65,7 +98,8 @@ body {
     }
 }
 
-.screen, img {
+.screen,
+.profile-image {
     background-color: rgb(255 247 255);
     border-radius: 25px;
     box-shadow: 0px 0px 0px 4px #503a51;

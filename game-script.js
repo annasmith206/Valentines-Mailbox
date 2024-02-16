@@ -4,11 +4,21 @@ const buttonPanel = {
     right: document.querySelector("#right-button")
 };
 
+const displayImage = document.querySelector(".display-image");
+
 const screen = document.querySelector("#main-screen");
 
  const cards = {
     current: 0,
-    names: ["pokemon", "monster hunter", "chipi", "genshin", "ghibli", "bananagrams"],
+    thumbnails: ["./images/pokeball.png", "./images/questBoard.png"],
+    images: ["./images/torchic.png", "./images/quest.png"],
+    names: ["pokemon", "monster hunter"],
+    getCurrentThumbnail: function() {
+        return this.thumbnails[this.current];
+    },
+    getCurrentImage: function() {
+        return this.images[this.current];
+    },
     getCurrentName: function() { 
         return this.names[this.current]; 
     },
@@ -49,28 +59,30 @@ buttonPanel.action.addEventListener("click", () => {
 buttonPanel.right.addEventListener("click", () => { 
     if (cards.canScrollRight()) {
         cards.scroll(direction.RIGHT);
-        screen.textContent = cards.getCurrentName();
+        displayImage.src = cards.getCurrentThumbnail();
+        //screen.textContent = cards.getCurrentName();
     }
 });
 
 buttonPanel.left.addEventListener("click", () => { 
     if (cards.canScrollLeft()) {
         cards.scroll(direction.LEFT);
-        screen.textContent = cards.getCurrentName();
+        displayImage.src = cards.getCurrentThumbnail();
+        //screen.textContent = cards.getCurrentName();
     }
 });
 
 
  function goToMailbox() {
     currentPhase = phase.MAILBOX;
-    buttonPanel.action.textContent = "Open Card";
-    screen.textContent = cards.getCurrentName();
+    buttonPanel.action.textContent = "Open";
+    displayImage.src = cards.getCurrentThumbnail();
  }
 
 function goToCard() {
     currentPhase = phase.LETTER;
     buttonPanel.action.textContent = "Back";
-    screen.textContent = "viewing contents of " + cards.getCurrentName();
+    displayImage.src = cards.getCurrentImage();
 }
 
  // 
