@@ -120,3 +120,8 @@ button:active{
     border-style: inset none none inset;
 }
 
+button:disabled{
+    border: solid 4px rgb(255 182 203);
+    color: #ffd8e5;
+    background-color: rgb(255 182 203);
+}

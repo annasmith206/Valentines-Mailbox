@@ -60,7 +60,7 @@ buttonPanel.right.addEventListener("click", () => {
     if (cards.canScrollRight()) {
         cards.scroll(direction.RIGHT);
         displayImage.src = cards.getCurrentThumbnail();
-        //screen.textContent = cards.getCurrentName();
+        setButtons();
     }
 });
 
@@ -68,24 +68,29 @@ buttonPanel.left.addEventListener("click", () => {
     if (cards.canScrollLeft()) {
         cards.scroll(direction.LEFT);
         displayImage.src = cards.getCurrentThumbnail();
-        //screen.textContent = cards.getCurrentName();
+        setButtons();
     }
 });
-
 
  function goToMailbox() {
     currentPhase = phase.MAILBOX;
     buttonPanel.action.textContent = "Open";
     displayImage.src = cards.getCurrentThumbnail();
+    setButtons();
  }
 
 function goToCard() {
     currentPhase = phase.LETTER;
     buttonPanel.action.textContent = "Back";
     displayImage.src = cards.getCurrentImage();
+    buttonPanel.left.disabled = true;
+    buttonPanel.right.disabled = true;
 }
 
- // 
+ function setButtons() {
+    buttonPanel.left.disabled = !cards.canScrollLeft();
+    buttonPanel.right.disabled = !cards.canScrollRight();
+ }
  // FUNCTION set buttons
  //      IF current card = 0:
  //          SET left button = disabled
