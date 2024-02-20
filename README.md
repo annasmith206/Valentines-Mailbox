@@ -13,7 +13,6 @@ For Valentines Day 2024, I put together this simple JavaScript website as a gift
 This game lets the user interact with a love-letter mailbox by entering a mailbox, and then viewing/opening various "letters". As the game progresses, different messages are displayed to acompany the content. 
 
 ## Credits
-[GitHub Pages](https://pages.github.com/)
 All pixel art images, except for the profile picture of the pixel girl, were drawn by me using Procreate. 
 The pixel girl image was found [here on Pinterest](https://www.pinterest.com/pin/790452172111958137/). I am unsure of the original artist. 
 
