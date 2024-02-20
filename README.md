@@ -1,6 +1,6 @@
 ## Valentines Mail Game
 
-**[View live preview here]([url](https://annasmith206.github.io/valentines/))**
+**[View live preview here](https://annasmith206.github.io/valentines/)**
 
 ![Image of game showing a pixel art pink mailbox with a welcome message.](./images/gameStartPreview.png)|![Image of game showing a pixel art picture of a cat in a cardboard box.](./images/catPreview.png)|
 | ----------- | ----------- |
@@ -13,13 +13,13 @@ For Valentines Day 2024, I put together this simple JavaScript website as a gift
 This game lets the user interact with a love-letter mailbox by entering a mailbox, and then viewing/opening various "letters". As the game progresses, different messages are displayed to acompany the content. 
 
 ## Credits
-
+[GitHub Pages](https://pages.github.com/)
 All pixel art images, except for the profile picture of the pixel girl, were drawn by me using Procreate. 
-The pixel girl image was found [here on Pinterest]([url](https://www.pinterest.com/pin/790452172111958137/)). I am unsure of the original artist. 
+The pixel girl image was found [here on Pinterest](https://www.pinterest.com/pin/790452172111958137/). I am unsure of the original artist. 
 
-I followed [this stack overflow post]([url](https://stackoverflow.com/a/32861765)) to create the grid background.
+I followed [this stack overflow post](https://stackoverflow.com/a/32861765) to create the grid background.
 
-I adapted code I found in [this stack overflow post]([url](https://stackoverflow.com/a/55079549)) to implement the bouncing animation on the letters.
+I adapted code I found in [this stack overflow post](https://stackoverflow.com/a/55079549) to implement the bouncing animation on the letters.
 
 ## Future Improvements
 There are a few things I didn't get around to in version 1 that I'd like to do in the future:
