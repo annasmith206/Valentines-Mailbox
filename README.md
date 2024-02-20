@@ -1,6 +1,6 @@
 ## Valentines Mail Game
 
-**[View live preview here](https://annasmith206.github.io/valentines/)**
+**[View live preview here](https://annasmith206.github.io/Valentines-Mailbox/)**
 
 ![Image of game showing a pixel art pink mailbox with a welcome message.](./images/gameStartPreview.png)|![Image of game showing a pixel art picture of a cat in a cardboard box.](./images/catPreview.png)|
 | ----------- | ----------- |
